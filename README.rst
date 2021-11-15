@@ -8,6 +8,7 @@ Installation
 =============
 
 On a LoPy, just put ``sds011.py`` in the ``lib/`` directory.
+On a NODEMCU ESP32 put ``sds011.py`` in the root directory.
 
 Usage Notes
 =============
@@ -24,6 +25,11 @@ Next, initialize a UART object (here P21 in TX and P22 is RX):
 
 	uart = UART(1, baudrate=9600, pins=('P21','P22'))
 
+For NODEMCU ESP32 choose:
+
+.. code-block:: python
+
+	uart = UART(1, baudrate = 9600, rx = 16, tx = 17)
 
 Since we have the UART bus object, we can now use it to instantiate the SDS011 object:
 
